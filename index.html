@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hotcake Mods</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">Hotcake Mods</div>
+      <nav class="main-nav">
+        <a href="#">Home</a>
+        <a href="#mymods">My Mods</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="section-wrapper">
+        <h1>Hotcake Mods</h1>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="links">
+      <div class="section-wrapper container">
+        <h2>Quick Links</h2>
+        <div class="link-buttons">
+          <a href="https://github.com/SrFlapjack" class="btn github" target="_blank" rel="noopener">
+            GitHub Profile
+          </a>
+          <a href="https://www.gta5-mods.com/users/Hotcake%20Mods" class="btn mods5" target="_blank" rel="noopener">
+            5Mods
+          </a>
+          <a href="#" class="btn patreon disabled">
+            Patreon (coming soon)
+          </a>
+          <a href="https://www.youtube.com/@SrFlapjack" class="btn youtube" target="_blank" rel="noopener">
+            YouTube
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Attributes -->
+    <section class="attributes">
+      <div class="section-wrapper container">
+        <h2>Attributes</h2>
+        <ul class="attribute-list">
+          <li>Associate’s Degree in IT-Software Development</li>
+          <li>Intimate experience coding in C#, HTML, CSS, and SQL</li>
+          <li>Skilled at designing responsive websites</li>
+          <li>Creating and configuring in multiple frameworks for FiveM</li>
+          <li>Mod creator for GTA V (and other games)</li>
+          <li>Content creator (soon)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- My Mods -->
+    <section id="mymods" class="mymods">
+      <div class="section-wrapper container">
+        <h2>My GTA V Mods</h2>
+        <div class="mod-grid">
+          <a href="https://www.gta5-mods.com/scripts/surrender-and-serve-beta" class="mod-card" target="_blank" rel="noopener">
+            <img src="Pictures/SurrenderServeThumbnail.png" alt="Surrender and serve">
+            <h3 class="mod-title">Surrender and Serve</h3>
+          </a>
+          <a href="https://www.gta5-mods.com/scripts/hotwire-v" class="mod-card" target="_blank" rel="noopener">
+            <img src="Pictures/HotwireVThumbnail.png" alt="Hotwire V Thumbnail">
+            <h3 class="mod-title">Hotwire V</h3>
+          </a>
+          <a href="https://www.gta5-mods.com/scripts/roadside-repair" class="mod-card" target="_blank" rel="noopener">
+            <img src="Pictures/RoadsideRepair.png" alt="Roadside Repair Thumbnail">
+            <h3 class="mod-title">Roadside Repair</h3>
+          </a>
+          <a href="https://www.gta5-mods.com/scripts/burgershot-job" class="mod-card" target="_blank" rel="noopener">
+            <img src="Pictures/BurgershotJob.png" alt="Burgershot job Thumbnail">
+            <h3 class="mod-title">Burgershot Job</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FiveM Mods -->
+    <section class="fivem">
+      <div class="section-wrapper container">
+        <h2>FiveM Resources</h2>
+        <p>Coming soon!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">© 2025 Hotcake Mods</div>
+  </footer>
+
+  <!-- Mobile Nav Toggle -->
+  <script>
+    document.querySelector('.nav-toggle')
+      .addEventListener('click', () =>
+        document.querySelector('.main-nav').classList.toggle('nav-open')
+      );
+  </script>
+</body>
+</html>

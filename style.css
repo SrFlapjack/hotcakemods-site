@@ -1,0 +1,202 @@
+/* 1. Base & Variables */
+:root {
+  --clr-primary:    #ff0066;
+  --clr-secondary:  #00ffcc;
+  --clr-dark:       #0a0a0a;
+  --clr-light:      #f5f5f5;
+  --wrapper-bg:     rgba(10,10,10,0.7);
+
+  /* Brand Colors */
+  --clr-github:     #000000;
+  --clr-discord:    #7289DA;
+  --clr-5mods:      #00ff15;
+  --clr-patreon:    #ff9900;
+  --clr-youtube:    #FF0000;
+  --clr-steam:      #00ADEE;
+
+  --font-main:      'Poppins', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* 2. Fixed Full-Screen Background */
+body {
+  font-family: var(--font-main);
+  color: var(--clr-light);
+  background:
+    linear-gradient(rgba(10,10,10,0.4), rgba(10,10,10,0.4)),
+    url('Pictures/background.png') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* 3. Utility Container */
+.container {
+  width: 90%; max-width: 1100px; margin: 0 auto;
+}
+
+/* 4. Section Wrapper */
+.section-wrapper {
+  background: var(--wrapper-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+/* 5. Header & Navigation */
+.site-header {
+  position: sticky; top: 0;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.logo {
+  font-size: 1.6rem; font-weight: 700;
+  text-shadow: 0 0 6px var(--clr-light);
+}
+.main-nav {
+  display: flex; gap: 1.5rem; transition: max-height 0.3s ease;
+}
+.main-nav a {
+  color: var(--clr-light);
+  text-decoration: none; font-weight: 500;
+  position: relative;
+}
+.main-nav a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--clr-light);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.main-nav a:hover::after { transform: scaleX(1); }
+
+/* Mobile Nav */
+.nav-toggle {
+  display: none; background: none; border: none;
+  font-size: 1.8rem; color: var(--clr-light);
+}
+@media (max-width: 700px) {
+  .nav-toggle { display: block; }
+  .main-nav {
+    position: absolute; top:100%; left:0; right:0;
+    background: var(--clr-dark);
+    flex-direction: column; overflow: hidden; max-height: 0;
+  }
+  .main-nav.nav-open { max-height: 200px; }
+  .main-nav a { padding: 0.75rem; }
+}
+
+/* 6. Hero Section */
+.hero h1 {
+  font-size: 2.8rem; margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px var(--clr-primary);
+}
+.hero p { font-size: 1.1rem; color: #ddd; }
+
+/* 7. Quick Links */
+.links h2 {
+  font-size: 2rem; margin-bottom: 1.5rem;
+  color: var(--clr-secondary);
+  text-shadow: 0 0 6px var(--clr-secondary);
+}
+.link-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  gap: 1rem;
+}
+.btn {
+  display: block; width: 100%;
+  padding: 1rem; border-radius: 4px;
+  font-weight: 600; text-decoration: none;
+  text-align: center; color: var(--clr-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn.github  { background: var(--clr-github); }
+.btn.discord { background: var(--clr-discord); }
+.btn.mods5   { background: var(--clr-5mods); }
+.btn.patreon { background: var(--clr-patreon); }
+.btn.youtube { background: var(--clr-youtube); }
+.btn.steam   { background: var(--clr-steam); }
+.btn:not(.disabled):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+.btn.disabled {
+  opacity: 0.6; pointer-events: none; cursor: default;
+  box-shadow: none; transform: none;
+}
+
+/* 8. Attributes */
+.attributes h2 {
+  font-size: 2rem; margin-bottom: 1.5rem;
+  color: var(--clr-primary);
+  text-shadow: 0 0 6px var(--clr-primary);
+  text-align: center;
+}
+.attribute-list {
+  list-style: none;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1rem;
+}
+.attribute-list li {
+  background: rgba(255,255,255,0.1);
+  border-left: 4px solid var(--clr-secondary);
+  padding: 1rem; border-radius: 4px;
+  font-weight: 500;
+}
+
+/* 9. My Mods */
+.mymods h2 {
+  font-size: 2rem; margin-bottom: 1.5rem;
+  color: var(--clr-secondary);
+  text-shadow: 0 0 6px var(--clr-secondary);
+  text-align: center;
+}
+.mod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1rem; margin-top: 1rem;
+}
+.mod-card {
+  background: var(--wrapper-bg);
+  border-radius: 8px; overflow: hidden;
+  text-decoration: none; color: var(--clr-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.mod-card img {
+  width: 100%; display: block;
+}
+.mod-title {
+  padding: 0.75rem; font-size: 1rem;
+  text-align: center; background: rgba(0,0,0,0.5);
+}
+.mod-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+/* 10. FiveM */
+.fivem h2 {
+  font-size: 2rem; margin-bottom: 1rem;
+  color: var(--clr-primary);
+  text-shadow: 0 0 6px var(--clr-primary);
+  text-align: center;
+}
+.fivem p {
+  font-size: 1.1rem; color: #ddd; text-align: center;
+}
+
+/* 11. Footer */
+.site-footer {
+  background: var(--clr-dark);
+  text-align: center; padding: 1rem 0;
+  font-size: 0.9rem; color: #bbb;
+  border-top: 1px solid #222;
+}
